@@ -3,10 +3,8 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 UDP udp;
-// port udp
-int PORT = 20777;
-// host udp
-String HOST = "127.0.0.1";
+int PORT_UDP = 20777;
+String HOST_UDP = "127.0.0.1";
 
 int speedDraw, rpmDraw, gearDraw, rearLeftWheelSpeedDraw, handbrakeInputDraw;
 float startRpm, startSpeed, speedGauge, rpmGauge;
@@ -18,7 +16,7 @@ void setup() {
   size(720, 430);
 
   // config udp
-  udp = new UDP(this, PORT, HOST);
+  udp = new UDP(this, PORT_UDP, HOST_UDP);
   //udp.log(true);
   udp.listen(true);
 
@@ -69,7 +67,7 @@ void draw() {
   text("DIRT3", 10, 30);
   textFont(fontGothicMedium_12);
   text("udp client", 12, 40);
-  text(HOST + ":" + PORT, 10, 420);
+  text(HOST_UDP + ":" + PORT_UDP, 10, 420);
 
   // speed arrow
   pushMatrix();
