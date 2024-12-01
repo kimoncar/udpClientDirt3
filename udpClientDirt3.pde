@@ -104,7 +104,7 @@ void draw() {
   };
 }
 
-void receive(byte[] data, String HOST_IP, int PORT_RX) {
+void receive(byte[] data) {
   ByteBuffer littleEndianByteBuffer = ByteBuffer.wrap(data, 0, 152).order(ByteOrder.LITTLE_ENDIAN);
 
   float time = littleEndianByteBuffer.getFloat(0);
