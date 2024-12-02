@@ -131,8 +131,8 @@ void receive(byte[] data) {
 
   float rearLeftSuspensionPosition_mm = littleEndianByteBuffer.getFloat(68);
   float rearRightSuspensionPosition_mm = littleEndianByteBuffer.getFloat(72);
-  float frontRightSuspensionPosition_mm = littleEndianByteBuffer.getFloat(76);
-  float frontLeftSuspensionPosition_mm = littleEndianByteBuffer.getFloat(80);
+  float frontLeftSuspensionPosition_mm = littleEndianByteBuffer.getFloat(76);
+  float frontRightSuspensionPosition_mm = littleEndianByteBuffer.getFloat(80);
 
   float rearLeftSuspensionSpeed_mm_s = littleEndianByteBuffer.getFloat(84);
   float rearRightSuspensionSpeed_mm_s = littleEndianByteBuffer.getFloat(88);
@@ -154,10 +154,10 @@ void receive(byte[] data) {
   float currentLap = littleEndianByteBuffer.getFloat(144);
   float rpm = littleEndianByteBuffer.getFloat(148);
 
-  speedGauge = speed*3.6;
+  speedGauge = speed * 3.6;
   speedDraw = int(speedGauge);
 
-  rpmGauge = rpm*10;
+  rpmGauge = rpm * 10;
   rpmDraw = int(rpmGauge);
 
   gearDraw = int(gear);
